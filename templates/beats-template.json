@@ -1895,6 +1895,10 @@
                   }
                 }
               }
+            },
+            "timestamp": {
+              "type": "alias",
+              "path": "@timestamp"
             }
           }
         },
@@ -2168,6 +2172,22 @@
               "ignore_above": 1024
             }
           }
+        },
+        "elasticsearch": {
+          "properties": {
+            "cluster": {
+              "properties": {
+                "id": {
+                  "ignore_above": 1024,
+                  "type": "keyword"
+                }
+              }
+            }
+          }
+        },
+        "cluster_uuid": {
+          "type": "alias",
+          "path": "elasticsearch.cluster.id"
         }
       }
     }
