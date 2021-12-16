@@ -1,0 +1,17 @@
+{
+  "name": "metrics-mappings-to-monitoring",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+      "push-templates": "node -e 'require(\"./scripts/es-templates\").pushTemplates()'",
+      "delete-templates": "node -e 'require(\"./scripts/es-templates\").deleteTemplates()'",
+      "generate-templates": "node scripts/generate-templates"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.24.0",
+    "lodash": "^4.17.21"
+  }
+}
