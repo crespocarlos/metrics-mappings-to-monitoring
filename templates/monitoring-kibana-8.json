@@ -1,4 +1,7 @@
 {
+  "index_patterns": [
+    ".monitoring-kibana-8-*"
+  ],
   "template": {
     "mappings": {
       "properties": {

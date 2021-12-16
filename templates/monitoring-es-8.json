@@ -1,4 +1,7 @@
 {
+  "index_patterns": [
+    ".monitoring-es-8-*"
+  ],
   "template": {
     "mappings": {
       "properties": {
