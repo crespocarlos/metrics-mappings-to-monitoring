@@ -11,3 +11,9 @@ Creates the local templates in elasticsearch
 
 `npm run delete-templates`
 Deletes the templates and associated datastreams in elasticsearch
+
+`npm run output-templates`
+Note: works against an elastic-package stack
+
+Outputs the elasticsearch, kibana and logstash mapping properties under the ./properties directory. It creates two files per product, one contains the metricbeat properties and the other the package properties built by merging the individual datastreams. Once the output is generated, run the following to get the diff:
+`npx jsondiffpatch ./properties/{product}-metricbeat.json ./properties/{product}-package.json`
