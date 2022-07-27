@@ -4,14 +4,16 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-      "push-templates": "node -e 'require(\"./scripts/es-templates\").pushTemplates()'",
-      "delete-templates": "node -e 'require(\"./scripts/es-templates\").deleteTemplates()'",
-      "generate-templates": "node scripts/generate-templates"
+    "push-templates": "node -e 'require(\"./scripts/es-templates\").pushTemplates()'",
+    "delete-templates": "node -e 'require(\"./scripts/es-templates\").deleteTemplates()'",
+    "generate-templates": "node scripts/generate-templates",
+    "output-templates": "node scripts/output-templates"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.24.0",
+    "jsondiffpatch": "^0.4.1",
     "lodash": "^4.17.21"
   }
 }
