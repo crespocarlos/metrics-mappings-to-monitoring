@@ -15,7 +15,7 @@ const PACKAGES = [
   {
     name: "kibana",
     metricbeatName: "kibana",
-    version: "1.4.0",
+    version: "1.0.4",
   },
   {
     name: "logstash",
