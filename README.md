@@ -19,5 +19,7 @@ Prints a package mapping delta with its metricbeat counterpart.
 
 options:
 --package (elasticsearch|kibana|logstash) - the package to diff
+
 --no-assets - don't install the package in Fleet
+
 --use-local - use the local metricbeat mappings under ./properties instead of the one installed in the currently running ES
