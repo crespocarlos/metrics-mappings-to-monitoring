@@ -6,6 +6,8 @@ const { merge } = require("lodash");
 
 const { getIndexTemplates, installIntegrationAssets } = require("../api");
 
+const METRICBEAT_MAPPINGS_DIR = './metricbeat_mappings_cache';
+
 const PACKAGES = [
   {
     name: "elasticsearch",
@@ -35,9 +37,9 @@ const mergeProperties = async (namespace) => {
 
 const printDelta = async (packageName, metricbeatName, useLocal) => {
   const [packageProperties, metricbeatProperties] = await Promise.all([
-    mergeProperties(`metrics-${packageName}.*`),
+    mergeProperties(`metrics-${packageName}.stack_monitoring.*`),
     useLocal
-      ? readFile(`./properties/${packageName}-metricbeat.json`).then(JSON.parse)
+      ? readFile(`${METRICBEAT_MAPPINGS_DIR}/${packageName}-metricbeat.json`).then(JSON.parse)
       : getIndexTemplates(`.monitoring-${metricbeatName}-mb`).then(
           ([index_template]) => index_template.template.mappings.properties
         ),
@@ -58,7 +60,7 @@ const printDelta = async (packageName, metricbeatName, useLocal) => {
     process.exit(1);
   }
 
-  await mkdir("./properties", { recursive: true });
+  await mkdir(METRICBEAT_MAPPINGS_DIR, { recursive: true });
 
   if (installAssets) {
     console.log("installing integration package assets");

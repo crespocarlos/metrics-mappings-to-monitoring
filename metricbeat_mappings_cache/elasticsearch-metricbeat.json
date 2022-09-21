@@ -834,28 +834,6 @@
     "properties": {
       "cluster": {
         "properties": {
-          "pending_task": {
-            "properties": {
-              "time_in_queue": {
-                "properties": {
-                  "ms": {
-                    "type": "long"
-                  }
-                }
-              },
-              "source": {
-                "ignore_above": 1024,
-                "type": "keyword"
-              },
-              "priority": {
-                "ignore_above": 1024,
-                "type": "keyword"
-              },
-              "insert_order": {
-                "type": "long"
-              }
-            }
-          },
           "stats": {
             "properties": {
               "license": {
@@ -1380,6 +1358,49 @@
                       "memory": {
                         "properties": {
                           "bytes": {
+                            "type": "long"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "bulk": {
+                    "properties": {
+                      "operations": {
+                        "properties": {
+                          "total": {
+                            "properties": {
+                              "count": {
+                                "type": "long"
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "total_size": {
+                        "properties": {
+                          "bytes": {
+                            "type": "long"
+                          }
+                        }
+                      },
+                      "avg_size": {
+                        "properties": {
+                          "bytes": {
+                            "type": "long"
+                          }
+                        }
+                      },
+                      "total_time": {
+                        "properties": {
+                          "ms": {
+                            "type": "long"
+                          }
+                        }
+                      },
+                      "avg_time": {
+                        "properties": {
+                          "ms": {
                             "type": "long"
                           }
                         }
@@ -2017,6 +2038,28 @@
           }
         }
       },
+      "pending_tasks": {
+        "properties": {
+          "time_in_queue": {
+            "properties": {
+              "ms": {
+                "type": "long"
+              }
+            }
+          },
+          "source": {
+            "ignore_above": 1024,
+            "type": "keyword"
+          },
+          "priority": {
+            "ignore_above": 1024,
+            "type": "keyword"
+          },
+          "insert_order": {
+            "type": "long"
+          }
+        }
+      },
       "enrich": {
         "properties": {
           "executed_searches": {
@@ -2332,6 +2375,9 @@
           },
           "shards": {
             "properties": {
+              "primaries": {
+                "type": "long"
+              },
               "total": {
                 "type": "long"
               }
@@ -2561,6 +2607,25 @@
                     "type": "long"
                   },
                   "hit_count": {
+                    "type": "long"
+                  }
+                }
+              },
+              "bulk": {
+                "properties": {
+                  "avg_time_in_millis": {
+                    "type": "long"
+                  },
+                  "avg_size_in_bytes": {
+                    "type": "long"
+                  },
+                  "total_time_in_millis": {
+                    "type": "long"
+                  },
+                  "total_operations": {
+                    "type": "long"
+                  },
+                  "total_size_in_bytes": {
                     "type": "long"
                   }
                 }
