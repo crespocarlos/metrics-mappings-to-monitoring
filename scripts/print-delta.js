@@ -12,17 +12,17 @@ const PACKAGES = [
   {
     name: "elasticsearch",
     metricbeatName: "es",
-    version: "0.3.0",
+    version: "1.0.0",
   },
   {
     name: "kibana",
     metricbeatName: "kibana",
-    version: "1.0.4",
+    version: "2.0.0",
   },
   {
     name: "logstash",
     metricbeatName: "logstash",
-    version: "1.1.0",
+    version: "2.0.0",
   },
 ];
 
